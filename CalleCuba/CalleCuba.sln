@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalleCuba", "CalleCuba.csproj", "{1C22BF2C-DECE-4018-AA5B-612D792E3A64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalleCuba.Core", "..\CalleCuba.Core\CalleCuba.Core.csproj", "{E7E5503F-D48E-48AB-A457-362061CC2180}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalleCuba.Core", "..\CalleCuba.Core\CalleCuba.Core.csproj", "{E7E5503F-D48E-48AB-A457-362061CC2180}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalleCuba.Data", "..\CalleCuba.Data\CalleCuba.Data.csproj", "{91AA9F40-F080-4363-BDEF-FE4F95F6DE7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E7E5503F-D48E-48AB-A457-362061CC2180}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7E5503F-D48E-48AB-A457-362061CC2180}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7E5503F-D48E-48AB-A457-362061CC2180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AA9F40-F080-4363-BDEF-FE4F95F6DE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AA9F40-F080-4363-BDEF-FE4F95F6DE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AA9F40-F080-4363-BDEF-FE4F95F6DE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AA9F40-F080-4363-BDEF-FE4F95F6DE7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
