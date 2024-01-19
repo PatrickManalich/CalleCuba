@@ -1,5 +1,6 @@
 using CalleCuba.Core;
 using CalleCuba.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CalleCuba.Pages.Restaurants
@@ -15,9 +16,14 @@ namespace CalleCuba.Pages.Restaurants
             _restaurantData = restaurantData;
         }
 
-        public void OnGet(int restaurantId)
+        public IActionResult OnGet(int restaurantId)
         {
             Restaurant = _restaurantData.GetById(restaurantId);
+            if (Restaurant == null)
+            {
+                return RedirectToPage("./NotFound");
+            }
+            return Page();
         }
     }
 }
