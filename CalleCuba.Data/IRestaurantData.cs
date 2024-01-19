@@ -7,6 +7,8 @@ namespace CalleCuba.Data
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
+
+        Restaurant GetById(int id);
     }
 
     public class InMemoryRestaurantData : IRestaurantData
@@ -20,6 +22,11 @@ namespace CalleCuba.Data
                 new Restaurant { Id = 2, Name = "Calle Cuba New York", Location = "New York", Cuisine = CuisineType.CubanVenezuelanFusion },
                 new Restaurant { Id = 3, Name = "Calle Cuba Medellin", Location = "Medellin", Cuisine = CuisineType.CubanColombianFusion }
             };
+        }
+
+        public Restaurant GetById(int id)
+        {
+            return _restaurants.SingleOrDefault(r => r.Id == id);
         }
 
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
