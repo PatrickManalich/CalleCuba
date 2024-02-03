@@ -12,6 +12,7 @@ namespace CalleCuba.Pages.Restaurants
         private readonly IRestaurantData _restaurantData;
         private readonly IHtmlHelper _htmlHelper;
 
+        [BindProperty]
         public Restaurant Restaurant { get; set; }
 
         public IEnumerable<SelectListItem> Cuisines { get; set; }
@@ -35,8 +36,15 @@ namespace CalleCuba.Pages.Restaurants
 
         public IActionResult OnPost()
         {
-            Cuisines = _htmlHelper.GetEnumSelectList<CuisineType>();
-            return Page();
+            if (!ModelState.IsValid)
+            {
+                Cuisines = _htmlHelper.GetEnumSelectList<CuisineType>();
+                return Page();
+            }
+
+            _restaurantData.Update(Restaurant);
+            _restaurantData.Commit();
+            return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
         }
     }
 }
