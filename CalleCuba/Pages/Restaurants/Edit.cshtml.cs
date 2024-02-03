@@ -49,7 +49,14 @@ namespace CalleCuba.Pages.Restaurants
                 return Page();
             }
 
-            _restaurantData.Update(Restaurant);
+            if (Restaurant.Id > 0)
+            {
+                _restaurantData.Update(Restaurant);
+            }
+            else
+            {
+                _restaurantData.Add(Restaurant);
+            }
             _restaurantData.Commit();
             return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
         }
