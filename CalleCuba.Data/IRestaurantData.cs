@@ -12,6 +12,8 @@ namespace CalleCuba.Data
 
         Restaurant Update(Restaurant updatedRestaurant);
 
+        Restaurant Add(Restaurant newRestaurant);
+
         int Commit();
     }
 
@@ -43,6 +45,13 @@ namespace CalleCuba.Data
                 restaurant.Cuisine = updatedRestaurant.Cuisine;
             }
             return restaurant;
+        }
+
+        public Restaurant Add(Restaurant newRestaurant)
+        {
+            _restaurants.Add(newRestaurant);
+            newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            return newRestaurant;
         }
 
         public int Commit()
