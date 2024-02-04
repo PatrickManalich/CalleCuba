@@ -24,9 +24,9 @@ namespace CalleCuba
 
             services.Configure<CookiePolicyOptions>(options =>
             {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
+                // TODO: Comply with GDPR regulations
+                options.ConsentCookie.HttpOnly = true;
+                options.ConsentCookie.IsEssential = true;
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
